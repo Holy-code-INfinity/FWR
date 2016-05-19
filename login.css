@@ -1,0 +1,79 @@
+
+body {background-color:#304c7a;/* Background color */
+    }
+
+
+.topright{
+    
+   float: right;
+}
+
+h3 {
+        color: white;
+        font-family: monospace;
+        
+       }
+  
+p {
+      color: white;
+       font-size: 19px;
+       display: inline-block;
+       font-family:monospace;
+
+  }
+
+.register{
+	background-color: #454545; /* Grey */
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 25px;
+}
+
+.username{
+
+	border-radius: 3px;
+	border: none;
+	font-size: 25px;
+
+}
+
+.password{
+
+	border-radius: 3px;
+	border: none;
+    font-size: 25px;
+}
+
+.login{
+	background-color: #00adad; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 123px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 25px;
+
+}
+
+
+.container{
+  position: absolute;
+  
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+    
+    
+    
+    
+}
+
+

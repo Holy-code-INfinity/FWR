@@ -1,0 +1,67 @@
+body {
+  padding: 75px 0px 25px 0px;
+  background-color: #F7F7C7;
+  color: #000;
+  font-size: 16px;
+}
+
+/* header */
+.container{
+	width : inherit;
+	height : inherit;
+	background-color: silver;
+}
+
+.container .navbar-brand{
+	color: #000;
+	background-color: inherit;
+	font-size: 1.5em;
+	border:2px;
+}
+
+.container .navbar-brand:hover{
+	color: #000;
+	background-color: #848484;
+	font-style:italic;
+	font-size: 1.5em;
+	border:2px;
+}
+
+.container #logo{
+	width: 30px;
+	height: 20px;
+	padding-right: 10px;
+	float:left;
+} 
+
+.container .navbar-left{
+border-left: 3px solid purple;
+padding-left: 5px;
+}
+
+.navbar .nav .tabs{
+    color: #000;
+}
+
+.navbar .nav .tabs:hover{
+    color: purple;
+	border-bottom: 3px solid red;
+	font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    height: 20px;
+    bottom: 0;
+    width: 100%;
+	border-top: 1px solid black;
+}
+
+footer .container{
+	color: red;
+	background-color: silver;
+}
+
+footer .container p{
+	color: black;
+}

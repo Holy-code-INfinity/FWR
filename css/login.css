@@ -20,7 +20,7 @@ body {
     text-decoration: none;
     display: inline-block;
     border-radius: 4px;
-    font-size: 25px;
+    font-size: 18px;
 }
 
 .register:hover {
@@ -28,6 +28,24 @@ body {
     color: white;
 }
 
+.log{
+   background-color:   #92CD00; /* green */
+    border: none;
+    color: white;
+    padding: 5px 148px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 20px;
+    
+
+}
+
+.log:hover {
+    background-color: #6e9a00; /* dark green */
+    color: white;
+}
 
 .h1, .h2, h1, h2{
     margin-top: 0px;
@@ -37,14 +55,9 @@ body {
     text-align: center; 
 }
 
-p{
-  font-size: 20px;
-  color: white;
-}
-
 .form-signin {
     background-color: #0093D1;
-    max-width: 570px;
+    max-width: 402px;
     padding: 25px;
     margin: 0 auto;
     
@@ -72,11 +85,23 @@ p{
 }
 .form-signin input[type="email"] {
   margin-bottom: -1px;
+  max-height: 35px;
+  max-width: 350px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+.form-signin input[type="submit"] {
+  margin-bottom: -1px;
+  max-height: 35px;
+  max-width: 350px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
+  max-height: 35px;
+  max-width: 350px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -93,7 +118,7 @@ p{
 }
 
 h3{
-    
+    font-size: 20px;
     margin-top: 0px;
     margin-bottom: 10px;
     color:white;

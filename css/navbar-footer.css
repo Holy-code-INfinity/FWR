@@ -1,29 +1,42 @@
 body {
-  padding: 75px 0px 25px 0px;
-  background-color: #F7F7C7;
+  padding: 75px 0 0 0;
+    background: #CCEAFF; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#8fcfff,#CCEAFF);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#8fcfff,#CCEAFF);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(#8fcfff,#CCEAFF);
+  /* Standard syntax */
+  background: linear-gradient(#8fcfff,#CCEAFF); 
   color: #000;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: Open Sans;
 }
 
 /* header */
 .container{
-	width : inherit;
-	height : inherit;
-	background-color: silver;
+	width:inherit;
+	background-color: #2075A0;
 }
 
-.container .navbar-brand{
-	color: #000;
-	background-color: inherit;
-	font-size: 1.5em;
+.container .navbar-brand:link,.container .navbar-brand:visited,.container .navbar-brand:active{
+	color: #fff;
+	font-family: Comic Sans MS;
+	font-weight: bold;
+	font-style:italic;
+	background-color: #ee3530;
+	font-size: 1.25em;
 	border:2px;
 }
 
 .container .navbar-brand:hover{
-	color: #000;
-	background-color: #848484;
+	color: #fff;
+	background-color: #D51515;
+	font-family: Comic Sans MS;
+	font-weight: bold;
 	font-style:italic;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	border:2px;
 }
 
@@ -35,33 +48,30 @@ body {
 } 
 
 .container .navbar-left{
-border-left: 3px solid purple;
 padding-left: 5px;
 }
 
-.navbar .nav .tabs{
-    color: #000;
-}
-
-.navbar .nav .tabs:hover{
-    color: purple;
-	border-bottom: 3px solid red;
+.navbar .nav .tabs,.navbar .nav .tabs:visited,.navbar .nav .tabs:active{
+    color: #fff;
 	font-weight: bold;
 }
 
+.navbar .nav .tabs:hover{
+    color: #fff;
+	background-color: #206590;
+	font-weight: bold;
+	box-shadow: 1px 2px 2px red;
+}
+
 footer {
-    position: fixed;
     height: 20px;
     bottom: 0;
     width: 100%;
-	border-top: 1px solid black;
+	border-top: 1px solid grey;
+	text-align:center;	
 }
 
-footer .container{
-	color: red;
-	background-color: silver;
-}
-
-footer .container p{
+footer p{
 	color: black;
+	font-size:15px;
 }

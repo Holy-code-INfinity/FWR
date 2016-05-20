@@ -18,7 +18,9 @@ body {
 }
 
 .navbar .nav .tabs:hover{
-	box-shadow: 2px 2px 2px red;
+	-webkit-box-shadow: 0 5px 1px -2px red;
+       -moz-box-shadow: 0 5px 1px -2px red;
+            box-shadow: 0 5px 1px -2px red;
 }
 
 /*

@@ -130,3 +130,6 @@ h3:hover{
   color:   #F4D00C;
 }
 
+.container .form-signin a{
+	color: darkblue;
+}

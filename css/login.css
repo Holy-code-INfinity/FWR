@@ -42,11 +42,6 @@ p{
   color: white;
 }
 
-p:hover {
-     
-    color: black;
-}
-
 .form-signin {
     background-color: #0093D1;
     max-width: 570px;
@@ -89,7 +84,7 @@ p:hover {
 .container{
   max-width:580px;
   max-height:299;
-  margin-top: 200px;
+  margin-top: 150px;
   align: center;
   margin-bottom: auto; 
   margin-right:auto; 

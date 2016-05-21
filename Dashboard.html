@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
 <html lang="en">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,7 +46,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-			<li><a href="About.html" class="tabs">About</a></li>
+			<li><a href="#" class="tabs">About</a></li>
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hello, "Name" <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -79,11 +80,20 @@
 					<textarea rows="4" cols="50" value="Enter your message..."></textarea>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+						<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#submitted" 
+            data-dismiss="modal">Send</button>
 					</div>
 				</div>
 				</div>
 			</div>
+
+      <div id="submitted" class="collapse">
+        
+            <div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <form class="feedback" >Feedback Submitted Successfully</form>
+            </div>
+      </div>
 
     <div class="container-fluid">
       <div class="row">

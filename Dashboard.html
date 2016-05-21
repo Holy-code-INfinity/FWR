@@ -47,7 +47,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 			<li><a href="#" class="tabs">About</a></li>
-            <li><a href="#" class="tabs">Suggestions</a></li>
+            <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hello, "Name" <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Account</a></li>
@@ -64,6 +64,27 @@
         </div>
       </div>
     </nav>
+	
+	
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Feedback</h4>
+					</div>
+					<div class="modal-body">
+					<p>&nbsp;Please suggest us ways we can improve this site or point out any bugs you find. We are always learning and happy to help :)</p>
+					<textarea rows="4" cols="50" value="Enter your message..."></textarea>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+					</div>
+				</div>
+				</div>
+			</div>
 
     <div class="container-fluid">
       <div class="row">

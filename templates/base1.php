@@ -1,38 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="dashboard">
-    <meta name="author" content="vedanshu">
-    <link rel="icon" href="#">
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <title>F.W.R. About Us</title>
-	
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
-	<link href="css/about.css" rel="stylesheet">
-	<link href="css/about.css" rel="stylesheet">
-	
-    <script src="js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -47,7 +12,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-			<li><a href="#" class="tabs">About</a></li>
+			<li><a href="About.php" class="tabs">About</a></li>
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hello, "Name" <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -100,7 +65,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 navbar navbar-inverse sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="Dashboard.html">Dashboard</a></li>
+            <li class="active"><a href="Dashboard.php"> Dashboard <span class="sr-only">(current)</span></a></li>
           </ul>
           <ul class="nav nav-sidebar">
 			<li><h4>MOVIES</h4></li>
@@ -117,30 +82,3 @@
         </div>
 		
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">About Us</h1>
-		  
-          <div class="row placeholders">
-            <div class="col-xs-6 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive">
-              <h4>Gaurav Kumar Rawat</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive">
-              <h4>Vedanshu Dahiya</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-        </div>
-      
-	  </div>
-    </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-</body></html>

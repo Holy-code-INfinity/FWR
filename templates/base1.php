@@ -1,3 +1,4 @@
+<?php $thisPage=basename($_SERVER['PHP_SELF']);?>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -12,7 +13,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-			<li><a href="About.php" class="tabs">About</a></li>
+			<li <?php if ($thisPage=="About.php") echo "class=\"active\""; ?> ><a href="About.php" class="tabs">About</a></li>
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hello, "Name" <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -65,19 +66,19 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 navbar navbar-inverse sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="Dashboard.php"> Dashboard <span class="sr-only">(current)</span></a></li>
+            <li <?php if ($thisPage=="Dashboard.php") echo "class=\"active\""; ?> ><a href="Dashboard.php" style="font-size:16px; font-family:Comic Sans MS;"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;Dashboard</a></li>
           </ul>
           <ul class="nav nav-sidebar">
 			<li><h4>MOVIES</h4></li>
-            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
-            <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
-            <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;My Favourites</a></li>
-            <li><a href="#"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Submit Movie Requests</a></li>
+            <li <?php if ($thisPage=="TopRated.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Top Rated</a></li>
+            <li <?php if ($thisPage=="RecentAddition.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Recent Additions</a></li>
+            <li <?php if ($thisPage=="Favourites.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;My Favourites</a></li>
+            <li <?php if ($thisPage=="SubmitMovie.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Submit Movie Requests</a></li>
           </ul>
           <ul class="nav nav-sidebar">
 			<li><h4>Admin Privileges</h4></li>		  
-            <li><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
-            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
+            <li <?php if ($thisPage=="AddMovies.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
+            <li <?php if ($thisPage=="ManageUsers.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
           </ul>
         </div>
 		

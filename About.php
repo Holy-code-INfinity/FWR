@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<?php include 'templates/commonHead.php'; ?>
-		<title>F.W.R.</title>
+		<title>About Us</title>
 		
     <!-- Custom styles for this template -->
 		<link href="css/about.css" rel="stylesheet">

@@ -4,7 +4,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="dashboard">
     <meta name="author" content="vedanshu">
-    <link rel="icon" href="#">
+    <link rel="icon" href="images/Icon.png">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 		
     <!-- Bootstrap core CSS -->

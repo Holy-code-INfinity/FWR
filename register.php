@@ -21,7 +21,7 @@
 
   <body>
     <div class="topright">
-      <FORM METHOD="LINK" ACTION="login.html">
+      <FORM METHOD="LINK" ACTION="login.php">
         <button type="submit" class="login">Log In</button>
       </FORM> 
     </div>

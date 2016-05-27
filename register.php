@@ -1,4 +1,58 @@
 <!DOCTYPE html>
+
+<?php
+   include("config.php");
+   session_start();
+
+   if(isset($_SESSION['login_user'])){
+      header("location:dashboard.php");
+   }
+
+   $error="";
+
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+	try{ 
+		$name = mysqli_real_escape_string($db,$_POST['name']);
+		$email = mysqli_real_escape_string($db,$_POST['email']);
+		/* Check if Email is already registered */
+		$sql = "SELECT id FROM users WHERE email = '$email'";
+		$count = mysqli_num_rows(mysqli_query($db, $sql));
+		if($count!=0){
+			throw new Exception("This E-Mail has already been registered.");
+		}
+		
+		$userName = mysqli_real_escape_string($db,$_POST['userName']);
+		/* Check UserName Availability */
+		$sql = "SELECT id FROM users WHERE username = '$userName'";
+		$count = mysqli_num_rows(mysqli_query($db, $sql));
+		if($count!=0){
+			throw new Exception("Sorry, UserName already taken !");
+		}
+		
+		$password1 = mysqli_real_escape_string($db,$_POST['password1']);
+		$password2 = mysqli_real_escape_string($db,$_POST['password2']);	  
+		/* Check if Passwords match*/
+		if(strcmp($password1,$password2)!=0){			
+			throw new Exception("Passwords Don't Match !");
+		}
+		
+		$admin=0;
+		if(strcmp($password1,'FWR_admin')==0)$admin=1;
+		
+		/* Everything is OK... Enter into database */
+		$sql = "INSERT INTO users (name,email,username,password,admin)VALUES ('$name','$email','$userName','$password1','$admin')";
+		$db->query($sql);
+		
+		header("location: login.php");
+	   }
+	catch(Exception $e){
+		$error=$e->getMessage();
+	   }  
+   }
+   
+   mysqli_close($db);   
+?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,6 +63,7 @@
     <meta name="author" content="gaurav">
     
     <title>Registration</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,24 +83,34 @@
 
     <div class="container">
       
-      <form class="form-signup">
+      <form role="form" data-toggle="validator" class="form-signup" action="" method="POST">
         <h2 class="form-signup-heading">Register Here</h2>
-        <h4>Your Name</h4>
-        <label for="inputEmail" class="sr-only">Name</label>
-        <input type="text" id="inputname" class="form-control" placeholder="Enter your Name" required autofocus>
-        <h4>Your Email</h4>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Enter your Email" required autofocus>
-        <h4>Your username</h4>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="Enter your Username" required autofocus>
+<?php 
+	if($error!="")
+	echo '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><b style="color:darkred;">'.$error.'</b>'; 
+?>
+        <h4>Full Name</h4>
+        <label for="name" class="sr-only">Full Name</label>
+        <input type="text" name="name" class="form-control" value='<?php if(isset($_POST['name']))echo $_POST['name']?>' placeholder="Enter your Full Name" required autofocus>
+
+        <h4>Email Address</h4>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" name="email" class="form-control" value='<?php if(isset($_POST['email']))echo $_POST['email']?>' placeholder="Enter your Email address" required autofocus>
+
+        <h4>UserName</h4>
+        <label for="userName" class="sr-only">UserName</label>
+        <input type="text" name="userName" class="form-control" value='<?php if(isset($_POST['userName']))echo $_POST['userName']?>' placeholder="Enter your UserName" required autofocus>
+
         <h4>Password</h4>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Enter your Password" required>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password1" id="password1" class="form-control" value='<?php if(isset($_POST['password1']))echo $_POST['password1']?>' placeholder="Enter your Password" required>
+
         <h4>Confirm Password</h4>
         <label for="inputPassword" class="sr-only">Confirm Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Confirm your Password" required>
-        <button class="signup" type="submit">Register</button>
+        <input type="password" name="password2" class="form-control" value='<?php if(isset($_POST['password2']))echo $_POST['password2']?>' placeholder="Confirm your Password" required>
+		<div class="help-block with-errors"></div>
+
+		<button class="signup" type="submit">Register</button>
       
       </form>
 

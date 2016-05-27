@@ -24,7 +24,7 @@
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row	
+      // If result matched $username and $password, table row must be 1 row	
       if($count == 1) {
          $_SESSION['login_user'] = $username;
          
@@ -33,6 +33,8 @@
          $error = "UserName or Password is invalid !";
       }
    }
+   
+   mysqli_close($db);   
 ?>
 
 <html lang="en">
@@ -45,7 +47,6 @@
     <meta name="author" content="gaurav">
     
     <title>Log In</title>
-
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	
     <!-- Bootstrap core CSS -->
@@ -73,9 +74,9 @@
 	echo '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><b style="color:darkred;">'.$error.'</b>'; 
 ?>
         <label for="username" class="sr-only">Username</label>
-        <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="text" name="username" class="form-control" value='<?php if(isset($_POST['username']))echo $_POST['username']?>' placeholder="Username" required autofocus>
         <label for="password" class="sr-only">Password</label>
-        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" class="form-control" value='<?php if(isset($_POST['password']))echo $_POST['password']?>' placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me

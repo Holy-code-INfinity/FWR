@@ -3,6 +3,11 @@
 <?php
    include("config.php");
    session_start();
+
+   if(isset($_SESSION['login_user'])){
+      header("location:dashboard.php");
+   }
+
    $error="";
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,7 +28,7 @@
       if($count == 1) {
          $_SESSION['login_user'] = $username;
          
-         header("location: welcome.php");
+         header("location: dashboard.php");
       }else {
          $error = "UserName or Password is invalid !";
       }

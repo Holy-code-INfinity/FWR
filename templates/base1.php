@@ -1,4 +1,8 @@
-<?php $thisPage=basename($_SERVER['PHP_SELF']);?>
+<?php 
+	$thisPage=basename($_SERVER['PHP_SELF']);
+	
+	include('session.php');
+?>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -13,15 +17,15 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-			<li <?php if ($thisPage=="About.php") echo "class=\"active\""; ?> ><a href="About.php" class="tabs">About</a></li>
+			<li <?php if ($thisPage=="about.php") echo "class=\"active\""; ?> ><a href="about.php" class="tabs">About</a></li>
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hello, "Name" <span class="caret"></span></a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<?php echo ' '.$_SESSION['login_user'] ?> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Settings</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Fed Up Already ?</li>
-                <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
               </ul>
             </li>
           </ul>
@@ -66,7 +70,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 navbar navbar-inverse sidebar">
           <ul class="nav nav-sidebar">
-            <li <?php if ($thisPage=="Dashboard.php") echo "class=\"active\""; ?> ><a href="Dashboard.php" style="font-size:16px; font-family:Comic Sans MS;"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;Dashboard</a></li>
+            <li <?php if ($thisPage=="dashboard.php") echo "class=\"active\""; ?> ><a href="dashboard.php" style="font-size:16px; font-family:Comic Sans MS;"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;Dashboard</a></li>
           </ul>
           <ul class="nav nav-sidebar">
 			<li><h4>MOVIES</h4></li>
@@ -75,11 +79,18 @@
             <li <?php if ($thisPage=="Favourites.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;My Favourites</a></li>
             <li <?php if ($thisPage=="SubmitMovie.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Submit Movie Requests</a></li>
           </ul>
+<?php 
+	if($isAdmin) 
+		{
+?>
           <ul class="nav nav-sidebar">
 			<li><h4>Admin Privileges</h4></li>		  
             <li <?php if ($thisPage=="AddMovies.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
             <li <?php if ($thisPage=="ManageUsers.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
           </ul>
+<?php   
+		} 
+?>		  
         </div>
 		
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

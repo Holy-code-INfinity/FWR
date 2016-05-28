@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2016 at 11:17 PM
+-- Generation Time: May 28, 2016 at 07:19 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -28,9 +28,11 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(36) NOT NULL,
+  `password` varchar(36) NOT NULL,
+  `email` varchar(36) NOT NULL,
+  `name` varchar(36) NOT NULL,
   `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,9 +40,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `admin`) VALUES
-(1, 'ved97', 'pass1234', 1),
-(2, 'firstUser', 'MyPass1234', 0);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `name`, `admin`) VALUES
+(2, 'asd', 'asd', 'dummy@dumdum', 'Dummy', 0),
+(3, 'Vedanshu', 'FWR_admin', 'vedanshudahiya@yahoo.com', 'Vedanshu Dahiya', 1),
+(18, 'new', 'new', 'new@new', 'new', 0);
 
 --
 -- Indexes for dumped tables
@@ -51,7 +54,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `admin`) VALUES
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -61,7 +66,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

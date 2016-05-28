@@ -8,7 +8,7 @@
       header("location:dashboard.php");
    }
 
-   $error="";
+   $error="";$success=0;
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 	try{ 
@@ -43,11 +43,14 @@
 		$sql = "INSERT INTO users (name,email,username,password,admin)VALUES ('$name','$email','$userName','$password1','$admin')";
 		$db->query($sql);
 		
-		header("location: login.php");
-	   }
-	catch(Exception $e){
-		$error=$e->getMessage();
-	   }  
+		/* Activate Modal at the End */
+		$success=1;
+		
+		header( "refresh:7;url=login.php" );
+		}		
+		catch(Exception $e){
+			$error=$e->getMessage();
+		}  
    }
    
    mysqli_close($db);   
@@ -122,5 +125,40 @@
    Back to HOME</h3></a>
     </div>
 
+	<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+					<h4 class="modal-title" color="green">Success !</h4>
+					</div>
+					<div class="modal-body">
+					<p>You have been Succesfully Registered... Please go ahead and login !<br> Now, you will be redirected to the login page.<br><br>(Automatically in 7 seconds)</p>
+					</div>
+					<div class="modal-footer">
+						<a href="login.php"><button type="button" class="btn btn-success">Lets Go !</button></a>
+					</div>
+				</div>
+				</div>
+			</div>
+	
+	
+	<!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+<?php
+
+if($success) echo "	
+	<script type='text/javascript'>
+				$(document).ready(function(){
+				$('#myModal').modal('show');
+				});
+	</script>"
+?>  	
   </body>
 </html>

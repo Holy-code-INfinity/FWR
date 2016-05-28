@@ -51,8 +51,7 @@
 					<textarea rows="4" cols="50" value="Enter your message..."></textarea>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#submitted" 
-            data-dismiss="modal">Send</button>
+						<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#submitted" data-dismiss="modal">Send</button>
 					</div>
 				</div>
 				</div>
@@ -61,7 +60,7 @@
       <div id="submitted" class="collapse">
         
             <div class="alert alert-success fade in">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <a href="#" class="close" data-toggle="collapse" data-target="#submitted" aria-label="close">&times;</a>
                     <form class="feedback" >Feedback Submitted Successfully</form>
             </div>
       </div>

@@ -6,6 +6,7 @@
 
    if(isset($_SESSION['login_user'])){
       header("location:dashboard.php");
+	  exit;
    }
 
    $error="";

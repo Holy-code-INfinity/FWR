@@ -1,7 +1,5 @@
 <?php 
 	$thisPage=basename($_SERVER['PHP_SELF']);
-	
-	include('session.php');
 ?>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -85,7 +83,8 @@
           <ul class="nav nav-sidebar">
 			<li><h4>Admin Privileges</h4></li>		  
             <li <?php if ($thisPage=="AddMovies.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
-            <li <?php if ($thisPage=="ManageUsers.php") echo "class=\"active\""; ?> ><a href="manageusers.php"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
+			<li <?php if ($thisPage=="feedback.php") echo "class=\"active\""; ?> ><a href="feedback.php"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;View Feedback</a></li>
+            <li <?php if ($thisPage=="manageusers.php") echo "class=\"active\""; ?> ><a href="manageusers.php"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
           </ul>
 <?php   
 		} 

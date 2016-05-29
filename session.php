@@ -10,6 +10,10 @@
    
    $ses_sql = mysqli_query($db,"select * from users where username = '$user_check'");   
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+   if(mysqli_num_rows($ses_sql)==0){
+	   session_destroy();
+	   header('location:login.php');
+   };
    
    /* checking is user is Admin or not */
    $_SESSION['admin'] = $row['admin'];

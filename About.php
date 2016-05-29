@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<?php include 'templates/commonHead.php'; ?>
+<?php include 'templates/commonHead.php'; ?>
 		<title>About Us</title>
 		
     <!-- Custom styles for this template -->
@@ -10,7 +10,7 @@
 	</head>
 
 	<body>
-  		<?php include 'templates/base1.php'; ?>
+<?php include 'templates/base1.php'; ?>
 		
 		<h1 class="page-header">About Us</h1>
 		  
@@ -27,6 +27,6 @@
             </div>
           </div>
   		
-		<?php include 'templates/base2.php'; ?>
+<?php include 'templates/base2.php'; ?>
 	</body>
 </html>

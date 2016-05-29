@@ -19,7 +19,7 @@
           <ul class="nav navbar-nav navbar-right">
 			<li <?php if ($thisPage=="about.php") echo "class=\"active\""; ?> ><a href="about.php" class="tabs">About</a></li>
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<?php echo ' '.$_SESSION['login_user'] ?> <span class="caret"></span></a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<?php echo ' '.$_SESSION['name'] ?> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Settings</a></li>
@@ -79,13 +79,13 @@
             <li <?php if ($thisPage=="SubmitMovie.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-share" aria-hidden="true"></i>&nbsp;Submit Movie Requests</a></li>
           </ul>
 <?php 
-	if($isAdmin) 
+	if($_SESSION['admin']) 
 		{
 ?>
           <ul class="nav nav-sidebar">
 			<li><h4>Admin Privileges</h4></li>		  
             <li <?php if ($thisPage=="AddMovies.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
-            <li <?php if ($thisPage=="ManageUsers.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
+            <li <?php if ($thisPage=="ManageUsers.php") echo "class=\"active\""; ?> ><a href="manageusers.php"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
           </ul>
 <?php   
 		} 

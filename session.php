@@ -12,9 +12,9 @@
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
    /* checking is user is Admin or not */
-   $isAdmin = $row['admin'];
-   $userID = $row['id'];
-   
+   $_SESSION['admin'] = $row['admin'];
+   $_SESSION['id'] = $row['id']; 
+   $_SESSION['name'] = $row['name'];
    
    mysqli_close($db);
 ?>

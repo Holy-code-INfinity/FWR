@@ -57,7 +57,7 @@
 			<td><?php echo $getName ?></td>
 			<td style="text-align:center;"><?php echo $getAdmin ?></td>
 			<td style="text-align:center;">
-			<a href="deleteusers.php?id=<?php echo $getId ?>" class="btn btn-danger btn-xs" role="button"><i class="fa fa-user-times" aria-hidden="true"></i></a>
+			<a href="deleteusers.php?id=<?php echo $getId ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger btn-xs" role="button"><i class="fa fa-user-times" aria-hidden="true"></i></a>
 			</td>
         </tr>
 <?php

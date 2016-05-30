@@ -10,3 +10,30 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function()
+		{	
+			$(document).on('submit', '#fbform', function()
+			{
+				var msg = $("#tamsg").val();
+				$("#tamsg").val('');
+				var data = 'tamsg='+msg;//+'&lname='+ln;
+				//var data = $(this).serialize();
+				
+				$.ajax({
+				
+				type : 'POST',
+				url  : 'sendfeedback.php',
+				data : data,
+				success :  function(data)
+					    {		
+							$("#myModal").modal('hide');
+							$(".alert").show();
+							window.setTimeout(function(){$(".alert").hide(1500);},3000);
+					    }
+				});
+				return false;
+			});
+		});
+	</script>

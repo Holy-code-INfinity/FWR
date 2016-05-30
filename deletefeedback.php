@@ -9,12 +9,10 @@
 	
 	$deleteID = mysqli_real_escape_string($db,$_GET['id']);
 
-	$sql = "DELETE FROM users WHERE id='$deleteID'";
-	$db->query($sql);
-	$sql = "DELETE FROM feedback WHERE id='$deleteID'";
+	$sql = "DELETE FROM feedback WHERE time='$deleteID'";
 	$db->query($sql);
 
 	mysqli_close($db);
 	
-	header("location: manageusers.php");
+	header("location: feedback.php");
 ?>

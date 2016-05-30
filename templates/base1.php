@@ -45,24 +45,25 @@
 					<h4 class="modal-title">Feedback</h4>
 					</div>
 					<div class="modal-body">
-					<p>&nbsp;Please suggest us ways we can improve this site or point out any bugs you find. We are always learning and happy to help :)</p>
-					<textarea rows="4" cols="50" value="Enter your message..."></textarea>
+					<p>Please suggest us ways we can improve this site or point out any bugs you find. We are always learning and happy to help if you need any :)</p>
+					<textarea id="tamsg" rows="4" cols="50" wrap ="soft" maxlength="300" style="width:100%;"placeholder="Enter your message... (max 300 letters)"></textarea>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#submitted" data-dismiss="modal">Send</button>
+					<form id="fbform">
+						<button class="btn btn-success" type="submit">Send</button>
+					</form>
 					</div>
 				</div>
 				</div>
 			</div>
 
-      <div id="submitted" class="collapse">
-        
-            <div class="alert alert-success fade in">
-                    <a href="#" class="close" data-toggle="collapse" data-target="#submitted" aria-label="close">&times;</a>
-                    <form class="feedback" >Feedback Submitted Successfully</form>
-            </div>
-      </div>
+		<div id="myAlert" class="alert alert-success fade in" style="display:none;">
+				<a href="#" class="close" onclick="$('.alert').hide()">&times;</a>
+				<form class="feedback" >Feedback Submitted Successfully</form>
+		</div>
 
+			
+	  
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 navbar navbar-inverse sidebar">

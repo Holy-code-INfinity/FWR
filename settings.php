@@ -36,120 +36,92 @@
 			  
 			}
 
-			/* Style the buttons that are used to open and close the accordion panel */
-			button.accordion {
-			    background-color: #eee;
-			    color: #444;
-			    cursor: pointer;
-			    padding: 18px;
-			    width: 100%;
-			    text-align: left;
-			    border: none;
-			    outline: none;
-			    transition: 0.4s;
-			}
-
-			/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-			button.accordion.active, button.accordion:hover {
-			    background-color: #ddd;
-			}
-
-			/* Style the accordion panel. Note: hidden by default */
-			div.panel {
-			    padding: 0 18px;
-			    background-color: white;
-			    display: none;
-			}
-
-			/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
-			div.panel.show {
-			    display: block !important;
-			}
-            
-            div.panel {
-		    padding: 0 18px;
-		    background-color: white;
-		    max-height: 0;
-		    overflow: hidden;
-		    transition: 0.6s ease-in-out;
-		    opacity: 0;
+		    .container{
+		    	
+		    	width :350px;
 		    }
 
-		    div.panel.show {
-		    opacity: 1;
-		    max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
-		    }
-
-		    button.accordion:after {
-		    content: '\02795'; /* Unicode character for "plus" sign (+) */
-		    font-size: 13px;
-		    color: #777;
-		    float: right;
-		    margin-left: 5px;
-			}
-
-			button.accordion.active:after {
-			    content: "\2796"; /* Unicode character for "minus" sign (-) */
-			}
-
-			.container{
-				width: 350px;
-			}
+            .panel,.panel-default{
+            	background: #d7e3fa ;
+            	
+            }
 		</style>
 
 			</head>	
 
-		<body onload="myFunction()" style="margin:0;">
+	<body onload="myFunction()" style="margin:0;">
 <?php include 'templates/base1.php'; ?>
-				
-		          <h1 class="page-header">Settings</h1>
-		          
+		
+          <h1 class="page-header">Settings</h1>
+          <div style="display:none;" id="myDiv" class="animate-bottom">
 
-					<div style="display:none;" id="myDiv" class="animate-bottom">
+			 <div class="panel-group" id="accordion">
+			    <div class="panel panel-primary">
+			      <div class="panel-heading">
+			        <h4 class="panel-title">
+			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Change Name</a>
+			        </h4>
+			      </div>
+			      <div id="collapse1" class="panel-collapse collapse in">
+			        <div class="panel-body">
+			        <div class="container">
+                  	  <h4>New Name</h4>
+                      <label for="name" class="sr-only">New Name</label>
+                      <input type="text" name="name" class="form-control" value='<?php if(isset($_POST['name']))echo $_POST['name']?>' placeholder="Enter your New Name" required autofocus>
+                      <br>
+                      <button type="button" class="btn btn-success">Save Changes</button>
 
-						<button class="accordion">Change Name</button>
-							<div class="panel">
-							    <div class="container">
-								  <h4>New Name</h4>
-							        <label for="name" class="sr-only">New Name</label>
-							        <input type="text" name="name" class="form-control" value='<?php if(isset($_POST['name']))echo $_POST['name']?>' placeholder="Enter your New Name" required autofocus>
-							        <br>
-							        <button type="button" class="btn btn-success">Save Changes</button>
+                    </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="panel panel-primary">
+			      <div class="panel-heading">
+			        <h4 class="panel-title">
+			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Change Username</a>
+			        </h4>
+			      </div>
+			      <div id="collapse2" class="panel-collapse collapse">
+			        <div class="panel-body">
+                       <div class="container">
+	                  	  <h4>New UserName</h4>
+	                      <label for="userName" class="sr-only">UserName</label>
+	                      <input type="text" name="userName" class="form-control" value='<?php if(isset($_POST['userName']))echo $_POST['userName']?>' placeholder="Enter your New UserName" required autofocus>
+	                      <br>
+                     <button type="button" class="btn btn-success">Save Changes</button> 
+                    </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="panel panel-primary">
+			      <div class="panel-heading">
+			        <h4 class="panel-title">
+			          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Change Password</a>
+			        </h4>
+			      </div>
+			      <div id="collapse3" class="panel-collapse collapse">
+			        <div class="panel-body">
+						<div class="container">
+		                  <label for="password" class="sr-only">Current Password</label>
+		                  <h4>Current Password</h4>
+		                      <input type="password" name="password1" id="password1" class="form-control" value='<?php if(isset($_POST['password1']))echo $_POST['password1']?>' placeholder="Enter your Current Password" required>
 
-						        </div>
-							</div>
+		                    <label for="password" class="sr-only">New Password</label>
+		                    <h4>New Password</h4>
+		                      <input type="password" name="password2" id="password1" class="form-control" value='<?php if(isset($_POST['password2']))echo $_POST['password2']?>' placeholder="Enter your New Password" required>
 
-						<button class="accordion">Change Username</button>
-							<div onload="myfunction()" class="panel">
-							    <div class="container">
-								  <h4>New UserName</h4>
-							        <label for="userName" class="sr-only">UserName</label>
-							        <input type="text" name="userName" class="form-control" value='<?php if(isset($_POST['userName']))echo $_POST['userName']?>' placeholder="Enter your New UserName" required autofocus>
-							        <br>
-							       <button type="button" class="btn btn-success">Save Changes</button> 
-						        </div>
-							</div>
-
-		  				<button class="accordion">Change Password</button>
-							<div class="panel">
-								<div class="container">
-									<label for="password" class="sr-only">Current Password</label>
-									<h4>Current Password</h4>
-							        <input type="password" name="password1" id="password1" class="form-control" value='<?php if(isset($_POST['password1']))echo $_POST['password1']?>' placeholder="Enter your Current Password" required>
-
-							  		<label for="password" class="sr-only">New Password</label>
-							  		<h4>New Password</h4>
-							        <input type="password" name="password2" id="password1" class="form-control" value='<?php if(isset($_POST['password2']))echo $_POST['password2']?>' placeholder="Enter your New Password" required>
-
-							        <h4>Confirm New Password</h4>
-							        <label for="inputPassword" class="sr-only">Confirm New Password</label>
-							        <input type="password" name="password3" class="form-control" value='<?php if(isset($_POST['password3']))echo $_POST['password3']?>' placeholder="Confirm your New Password" required>
-							        <br>
-							       <button type="button" class="btn btn-success">Save Changes</button> 
-							    </div>
-							</div>
-						 	
-					</div>
+		                      <h4>Confirm New Password</h4>
+		                      <label for="inputPassword" class="sr-only">Confirm New Password</label>
+		                      <input type="password" name="password3" class="form-control" value='<?php if(isset($_POST['password3']))echo $_POST['password3']?>' placeholder="Confirm your New Password" required>
+		                      <br>
+		                     <button type="button" class="btn btn-success">Change Password</button> 
+		                  </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div> 	
+				 	
+		  </div>
 
        
 		<script>
@@ -162,20 +134,12 @@
 			function showPage() {
 			  document.getElementById("myDiv").style.display = "block";
 			}
-
-			/* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
-			var acc = document.getElementsByClassName("accordion");
-			var i;
-
-			for (i = 0; i < acc.length; i++) {
-			    acc[i].onclick = function(){
-			        this.classList.toggle("active");
-			        this.nextElementSibling.classList.toggle("show");
-			    }
-			}
-		</script>
+            
+            
+			</script>
 
   		
-<?php include 'templates/base2.php'; ?>
+<?php include 'templates/base2.php';?>
+
 	</body>
 </html>

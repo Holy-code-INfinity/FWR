@@ -102,7 +102,7 @@
 		var myVar;
 
 		function myFunction() {
-			myVar = setTimeout(showPage, 250);
+			myVar = setTimeout(showPage, 200);
 		}
 
 		function showPage() {

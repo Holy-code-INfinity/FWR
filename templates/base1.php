@@ -17,10 +17,10 @@
           <ul class="nav navbar-nav navbar-right">
 			<li <?php if ($thisPage=="about.php") echo "class=\"active\""; ?> ><a href="about.php" class="tabs">About</a></li>
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<?php echo ' '.$_SESSION['name'] ?> <span class="caret"></span></a>
+            <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<span id="helloName"><?php echo ' '.$_SESSION['name'] ?></span> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Settings</a></li>
+                <li <?php if ($thisPage=="account.php") echo "class=\"active\""; ?> ><a href="acount.php">Account Details</a></li>			  
+                <li <?php if ($thisPage=="settings.php") echo "class=\"active\""; ?> ><a href="settings.php">Settings</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Fed Up Already ?</li>
                 <li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
@@ -84,7 +84,7 @@
           <ul class="nav nav-sidebar">
 			<li><h4>Admin Privileges</h4></li>		  
             <li <?php if ($thisPage=="AddMovies.php") echo "class=\"active\""; ?> ><a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;Add Movies</a></li>
-			<li <?php if ($thisPage=="feedback.php") echo "class=\"active\""; ?> ><a href="feedback.php"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;View Feedback</a></li>
+			<li <?php if ($thisPage=="feedback.php") echo "class=\"active\""; ?> ><a href="feedback.php"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;View Feedback(s)</a></li>
             <li <?php if ($thisPage=="manageusers.php") echo "class=\"active\""; ?> ><a href="manageusers.php"><i class="fa fa-user-plus" aria-hidden="true"></i><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;Manage Users</a></li>
           </ul>
 <?php   

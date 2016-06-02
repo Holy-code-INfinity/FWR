@@ -36,5 +36,7 @@ else if($_POST['set']==3){
 	echo "<span style='color:green'><i class='fa fa-check' aria-hidden='true'></i>&nbsp;PASSWORD CHANGED! Hush...It will be our little secret ;)</span>";
 }
 
+	$_SESSION['updated']=0;
+
 mysqli_close($db);
 ?>

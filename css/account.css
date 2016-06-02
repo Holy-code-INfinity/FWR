@@ -1,5 +1,3 @@
-	/* Center the loader */
-/* Add animation to "page content" */
 .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;
@@ -20,24 +18,16 @@
 
 #myDiv {
   display: none;
-  text-align: center;
-}
-
-.container{
-	width :100%;
-}
-
-.container input{
-	display:block;
-	margin:0 auto;
-	width:300px;
-	text-align: center;
-}
-
-.container h4{
-	margin-bottom:5px;
 }
 
 .panel,.panel-default{
 	background: #d7e3fa ;
+}
+
+.container{
+	width: 100%;
+}
+.toppad
+{
+	margin-top:20px;
 }

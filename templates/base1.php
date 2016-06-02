@@ -19,7 +19,7 @@
             <li><a href="#" class="tabs" data-toggle="modal" data-target="#myModal">Feedback</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle tabs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,<span id="helloName"><?php echo ' '.htmlspecialchars($_SESSION['name']) ?></span> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li <?php if ($thisPage=="account.php") echo "class=\"active\""; ?> ><a href="acount.php">Account Details</a></li>			  
+                <li <?php if ($thisPage=="accountdetails.php") echo "class=\"active\""; ?> ><a href="accountdetails.php">Account Details</a></li>			  
                 <li <?php if ($thisPage=="settings.php") echo "class=\"active\""; ?> ><a href="settings.php">Settings</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Fed Up Already ?</li>

@@ -28,7 +28,7 @@ $(document).ready(function() {
 		$.post("settingsUpdate.php", { set:1,newName: newName },  
 		function(result){  
 			$('#notif1').html("<span style='color:green;'><i class='fa fa-check' aria-hidden='true'></i>UPDATED! Hey,Look at new you!</span>");
-			$('#helloName').html(newName);
+			$('#helloName').html(escapeHtml(newName));
 		});	
 	});
 		
@@ -77,3 +77,12 @@ function check_availability(){
 			}
 	});  
 }  
+
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }

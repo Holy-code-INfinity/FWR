@@ -9,25 +9,25 @@ include('config.php');
 $userID = $_SESSION['id'];
 
 if($_POST['set']==1){
-	$newName=$_POST['newName'];
+	$newName=mysqli_real_escape_string($db,$_POST['newName']);
 	$db->query("UPDATE `users` SET `name` = '$newName' WHERE `users`.`id` = $userID;");
 }  
 
 else if($_POST['set']==2){
-	$newUsername=$_POST['newUsername'];
+	$newUsername=mysqli_real_escape_string($db,$_POST['newUsername']);
 	
 	if(mysqli_num_rows(mysqli_query($db,"SELECT id FROM users WHERE username = '$newUsername' and id!='$userID'"))!=0){
 		exit;
 	}
 	
 	$db->query("UPDATE `users` SET `username` = '$newUsername' WHERE `users`.`id` = $userID;");
-	$_SESSION['login_user']=$newUsername;
+	$_SESSION['login_user']=$_POST['newUsername'];
 	echo "<span style='color:green;'><i class='fa fa-check' aria-hidden='true'></i>UPDATED! Remember The UserName...You'll need it!</span>";
 }
 
 else if($_POST['set']==3){
-	$newPassword=$_POST['newPassword'];
-	$currPassword=$_POST['currPassword'];
+	$newPassword=mysqli_real_escape_string($db,$_POST['newPassword']);
+	$currPassword=mysqli_real_escape_string($db,$_POST['currPassword']);
 	if(mysqli_num_rows(mysqli_query($db,"SELECT id from users where id='$userID' and password='$currPassword'"))==0){
 		echo "<span style='color:darkred'><i class='fa fa-exclamation-triangle' aria-hidden='true'></i>&nbsp;WRONG PASSWORD! Someone is getting a little forgetful,huh?</span>";
 		exit;

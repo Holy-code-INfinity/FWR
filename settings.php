@@ -31,7 +31,7 @@
 			  <form id="form1" autocomplete="off">
 			  <h4>Hey, who do you wanna be today ? (*cough* James Bond ? *cough*) </h4>
 			  <label for="name" class="sr-only">Change Name</label>
-			  <input type="text" id="newName" class="form-control" value='<?php echo $_SESSION['name'] ?>'  placeholder="Enter your Name" required>
+			  <input type="text" id="newName" class="form-control" value='<?php echo htmlspecialchars($_SESSION['name']) ?>'  placeholder="Enter your Name" required>
 			  <div id="notif1"></div>
 			  <br>
 			  <button type="submit" class="btn btn-success">Save Changes</button>

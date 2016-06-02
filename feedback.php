@@ -40,7 +40,6 @@
 	
 <?php 
 	while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-		$getId = $row['id'];
         $getName = $nameArray[$row['id']];
         $getEmail = $emailArray[$row['id']];
 		$getFeedback = $row['message'];
@@ -50,7 +49,7 @@
     <div class="panel-body" style="padding:5px;">
 	<table style="width:100%;margin:0px;">
 		<tr>
-			<td style='text-align:left; font-size:16px;'><?php echo $getFeedback ?></td>
+			<td style='text-align:left; font-size:16px;'><?php echo htmlspecialchars($getFeedback) ?></td>
 			<td style='text-align:right;'>			
 			<a href="deletefeedback.php?id=<?php echo $getTime ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger btn-xs" role="button">
 			Delete&nbsp;<i class="fa fa-times" aria-hidden="true"></i>
@@ -61,8 +60,8 @@
     <div class="panel-footer" style="padding:2px;">
 	<table style="width:100%;margin:0px;">
 		<tr>
-			<td style='text-align:left; width:40%;'><b>Name:</b>&nbsp;<?php echo $getName ?></td>
-			<td style='text-align:left; width:40%;'><b>Email:</b>&nbsp;<?php echo $getEmail ?></td>
+			<td style='text-align:left; width:40%;'><b>Name:</b>&nbsp;<?php echo htmlspecialchars($getName) ?></td>
+			<td style='text-align:left; width:40%;'><b>Email:</b>&nbsp;<?php echo htmlspecialchars($getEmail) ?></td>
 			<td style='text-align:right; width:20%;'><b>Time:</b>&nbsp;<?php echo date('H:i a d/m/Y',strtotime($getTime));?></td>
 		</tr>
 	</table>

@@ -21,16 +21,18 @@
       
       $sql = "SELECT id FROM users WHERE username = '$username' and password = '$password'";
       $result = mysqli_query($db, $sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      
       $count = mysqli_num_rows($result);
       
-      // If result matched $username and $password, table row must be 1 row	
+      // Correct $username and $password
       if($count == 1) {
          $_SESSION['login_user'] = $username;
          
          header("location: dashboard.php");
       }else {
+		 if(mysqli_num_rows(mysqli_query($db,"SELECT admin FROM waiting WHERE username = '$username'"))!=0){
+			 $error = " UserName awaiting CONFIRMATION...<br>Please go to the Email you provided and confirm your registration!";
+		 } 
+		 else
          $error = "UserName or Password is invalid !";
       }
    }

@@ -41,10 +41,6 @@
 .toppad
 {margin-top:20px;
 }
-
-
-
-
         </style>
 
 			</head>	
@@ -61,7 +57,6 @@
       <div class="row">
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
            <A href="settings.php" >Edit Profile</A>
-           <A href="logout.php" >Logout</A>
        <br>
 	</div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -69,7 +64,7 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"><?php echo ' '.$_SESSION['name'] ?></h3>
+              <h3 class="panel-title"><?php echo htmlspecialchars($_SESSION['name']) ?></h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -121,7 +116,7 @@
 		var myVar;
 
 		function myFunction() {
-			myVar = setTimeout(showPage, 2000);
+			myVar = setTimeout(showPage, 200);
 		}
 
 		function showPage() {
